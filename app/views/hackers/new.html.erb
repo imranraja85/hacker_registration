@@ -1,23 +1,51 @@
 <div class="col-md-6 col-md-offset-3 hacker-new">
   <h1 class="head logo">GE @ MHACKS</h1>
 
-  <%= form_tag do |f| %>
+  <%= form_for(@hacker) do |f| %>
 
     <div class="form-group row">
       <div class="input-group">
         <span class="input-group-addon">
-          <i class="fa fa-2x fa-user"></i>
+          <i class="fa fa-fw fa-2x fa-user"></i>
         </span>
-        <%= text_field_tag 'name', nil, :class => 'form-control', :placeholder => 'Name' %>
+        <%= f.text_field :first_name, :class => 'form-control', :placeholder => 'First Name', :required => true %>
       </div>
     </div>
 
     <div class="form-group row">
       <div class="input-group">
         <span class="input-group-addon">
-          <i class="fa fa-2x fa-github"></i>
+          <i class="fa fa-fw fa-2x fa-user"></i>
         </span>
-        <%= text_field_tag 'github_id', nil, :class => 'form-control', :placeholder => 'Your GitHub username' %>
+        <%= f.text_field :last_name, :class => 'form-control', :placeholder => 'Last Name', :required => true %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="input-group">
+        <span class="input-group-addon">
+          <i class="fa fa-fw fa-2x fa-envelope"></i>
+        </span>
+        <%= f.text_field 'email', :class => 'form-control', :placeholder => 'Your email address', :required => true %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="input-group">
+        <span class="input-group-addon">
+          <i class="fa fa-fw fa-2x fa-github"></i>
+        </span>
+        <%= f.text_field 'github_id', :class => 'form-control', :placeholder => 'Your GitHub username', :required => true %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="input-group">
+        <span class="input-group-addon">
+          <i class="fa fa-fw fa-2x fa-file-code-o"></i>
+        </span>
+        <%#= f.text_field 'position', :class => 'form-control', :placeholder => 'Select a Position' %>
+        <%= f.select 'position', ['Full Time', 'Intern'], {include_blank: 'Select a Position'}, { :class => 'form-control', :required => true} %>
       </div>
     </div>
 
