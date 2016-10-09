@@ -1,4 +1,7 @@
 class Hacker < ApplicationRecord
+  FULL_POSITION='Full-time'
+  PART_POSITION='Part-time'
+  
   validates :first_name, :last_name, :email, :github_id, :position, presence: true
 
   def self.pick_winner(num = 1)
