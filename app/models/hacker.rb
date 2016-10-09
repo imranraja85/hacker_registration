@@ -1,3 +1,5 @@
+require 'csv'
+
 class Hacker < ApplicationRecord
   POSITIONS = {
 		FULL_POSITION: 'Full-time',
@@ -14,4 +16,12 @@ class Hacker < ApplicationRecord
     end
   end
 
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << column_names
+      all.each do |hacker|
+        csv << hacker.attributes.values_at(*column_names)
+      end
+    end
+  end
 end

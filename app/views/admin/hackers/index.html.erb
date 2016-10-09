@@ -1,7 +1,8 @@
 <h1 class="lead">Hackers List</h1>
 
 <div>
- <%= button_to 'Run Raffle', select_winner_admin_hackers_path, :class => 'btn-warning', 'data-confirm' => 'Ready to run the raffle?' %>
+ <%= link_to 'Run Raffle', select_winner_admin_hackers_path, :class => 'btn btn-warning', :method => :post, 'data-confirm' => 'Ready to run the raffle?' %>
+ <%= link_to 'Export Hackers', admin_hackers_path(format: 'csv'), :class => 'btn btn-default' %>
 </div>
 
 <div class="col-md-8 col-md-offset-2">
