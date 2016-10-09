@@ -12,6 +12,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap-sass-extras'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
+gem "font-awesome-rails"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
