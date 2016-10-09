@@ -1,0 +1,25 @@
+<h1 class="lead">Hackers List</h1>
+
+<div>
+ <%= button_to 'Run Raffle', select_winner_admin_hackers_path, :class => 'btn-warning', 'data-confirm' => 'Ready to run the raffle?' %>
+</div>
+
+<div class="col-md-8 col-md-offset-2">
+<table class="table">
+  <thead>
+    <tr>
+      <th class="text-center">First Name</th>
+      <th class="text-center">Last Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hackers.each do |hacker| %>
+      <tr>
+        <td><%= hacker.first_name %> <%= " - winner" if hacker.winner %></td>
+        <td><%= hacker.last_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

@@ -13,4 +13,5 @@ class Hacker < ApplicationRecord
       h.save
     end
   end
+
 end
