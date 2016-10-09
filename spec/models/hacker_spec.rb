@@ -13,4 +13,14 @@ RSpec.describe Hacker, type: :model do
     it { should validate_presence_of(:email) }
     it { should validate_presence_of(:position) }
   end
+
+  describe 'raffle tests' do
+    let(:hackers) { 10.times {create(:hacker)} }
+
+    before { hackers }
+
+    it 'should select one winner' do
+      expect(Hacker.pick_winner.count).to eq(1)
+    end
+  end
 end

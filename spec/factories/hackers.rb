@@ -5,5 +5,6 @@ FactoryGirl.define do
     github_id  'Ace-Hack'
     position 'full-time'
     email 'ace@example.com'
+    winner false
   end
 end
