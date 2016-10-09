@@ -7,7 +7,7 @@ class HackersController < ApplicationController
     @hacker = Hacker.new(hacker_params)
 
     if @hacker.save
-      render :thank_you
+      redirect_to hacker_thank_you_path
     else
       flash.now[:error] = "Could not save your info"
       render :new
