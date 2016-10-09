@@ -1,24 +1,31 @@
-# README
+# Hacker Registration
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hacker Registration is a mobile friendly, easy to use, application to assists hackathon sponsors organize a raffle. The landing page is a form with only the minimal amount of fields needed to capture a hacker's profile.
 
-Things you may want to cover:
+## Setup
+To create an admin, run the following rake task:
 
-* Ruby version
+```sh
+rake generate_admin
+```
 
-* System dependencies
+To access the admin screen append '/admin' to the end of your url
 
-* Configuration
+## Environment Variables
 
-* Database creation
+| Name | description | default |
+|------|-------------|---------|
+|ADMIN_EMAIL| The email address for your admin account | admin@admin.com (development)|
+|ADMIN_PASSWORD| The default password for your admin account| password (development)|
 
-* Database initialization
+## Testing
 
-* How to run the test suite
+```
+bundle exec rspec
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+or use Guard to autorun your test suite
 
-* Deployment instructions
-
-* ...
+```
+guard
+```

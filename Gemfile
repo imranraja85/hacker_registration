@@ -26,6 +26,7 @@ group :development, :test do
   gem 'shoulda'
   gem 'capybara'
   gem 'launchy'
+  gem 'guard-rspec'
 end
 
 group :development do
