@@ -5,7 +5,18 @@ class HackersController < ApplicationController
 
   def create
     @hacker = Hacker.new(hacker_params)
-    @hacker.save!
-    redirect_to :back
+
+    if @hacker.save
+      render :thank_you
+    else
+      flash.now[:error] = "Could not save your info"
+      render :new
+    end
+  end
+
+  private
+
+  def hacker_params
+    params.require(:hacker).permit(:first_name, :last_name, :email, :github_id, :position)
   end
 end
