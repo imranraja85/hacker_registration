@@ -19,4 +19,15 @@ describe 'the admin login process' do
       expect(page).to have_content('Hackers List')
     end
   end
+
+  context 'when i logout' do
+    it 'takes me to the hacker index page' do
+      admin = create(:admin)
+      login_as(admin, :scope => :admin)
+
+      visit '/admin/hackers'
+      click_on 'log out'
+      expect(page).to have_content('Signed out successfully')
+    end
+  end
 end
