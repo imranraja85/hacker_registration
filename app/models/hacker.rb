@@ -3,7 +3,9 @@ class Hacker < ApplicationRecord
 
   def self.pick_winner(num = 1)
     return if count < num
-    offset(rand(count - num)).limit(num)
+    offset(rand(count - num)).limit(num).each do |h|
+      h.winner = true
+      h.save
+    end
   end
-
 end
