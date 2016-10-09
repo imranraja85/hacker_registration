@@ -9,7 +9,7 @@ describe 'the hacker sign up process' do
       fill_in 'Last Name', with: 'Underwood'
       fill_in 'Your email address', with: 'franky@wh.com'
       fill_in 'Your GitHub username', with: 'frankie'
-      select 'Intern', from: 'hacker[position]'
+      select Hacker::POSITIONS[:FULL_POSITION], from: 'hacker[position]'
 
       click_on('Submit Profile')
 
@@ -24,7 +24,7 @@ describe 'the hacker sign up process' do
       fill_in 'First Name', with: 'Frank'
       fill_in 'Last Name', with: 'Underwood'
       fill_in 'Your GitHub username', with: 'frankie'
-      select 'Intern', from: 'hacker[position]'
+      select Hacker::POSITIONS[:FULL_POSITION], from: 'hacker[position]'
 
       click_on('Submit Profile')
 

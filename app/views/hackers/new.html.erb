@@ -48,7 +48,7 @@
         <span class="input-group-addon">
           <i class="fa fa-fw fa-2x fa-file-code-o"></i>
         </span>
-        <%= f.select 'position', ['Full Time', 'Intern'], {include_blank: 'Select a Position'}, { :class => 'form-control', :required => true} %>
+        <%= f.select 'position', Hacker::POSITIONS.values, {include_blank: 'Select a Position'}, { :class => 'form-control', :required => true} %>
       </div>
     </div>
 
