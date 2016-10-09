@@ -3,6 +3,10 @@
 
   <%= form_for(@hacker) do |f| %>
 
+    <% @hacker.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+
     <div class="form-group row">
       <div class="input-group">
         <span class="input-group-addon">
@@ -26,7 +30,7 @@
         <span class="input-group-addon">
           <i class="fa fa-fw fa-2x fa-envelope"></i>
         </span>
-        <%= f.text_field 'email', :class => 'form-control', :placeholder => 'Your email address', :required => true %>
+        <%= f.text_field :email, :class => 'form-control', :placeholder => 'Your email address', :required => true %>
       </div>
     </div>
 
@@ -35,7 +39,7 @@
         <span class="input-group-addon">
           <i class="fa fa-fw fa-2x fa-github"></i>
         </span>
-        <%= f.text_field 'github_id', :class => 'form-control', :placeholder => 'Your GitHub username', :required => true %>
+        <%= f.text_field :github_id, :class => 'form-control', :placeholder => 'Your GitHub username', :required => true %>
       </div>
     </div>
 
@@ -44,7 +48,6 @@
         <span class="input-group-addon">
           <i class="fa fa-fw fa-2x fa-file-code-o"></i>
         </span>
-        <%#= f.text_field 'position', :class => 'form-control', :placeholder => 'Select a Position' %>
         <%= f.select 'position', ['Full Time', 'Intern'], {include_blank: 'Select a Position'}, { :class => 'form-control', :required => true} %>
       </div>
     </div>
