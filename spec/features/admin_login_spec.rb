@@ -5,7 +5,7 @@ describe 'the admin login process' do
    it 'redirects me to the admin login screen' do
      visit '/admin/hackers'
 
-     expect(page.body).to match(/You need to sign in or sign up before continuing/)
+     expect(page).to have_content('You need to sign in or sign up before continuing')
    end
  end
 
@@ -16,7 +16,7 @@ describe 'the admin login process' do
 
       visit '/admin/hackers'
 
-      expect(page.body).to match(/Hackers List/)
+      expect(page).to have_content('Hackers List')
     end
   end
 end
