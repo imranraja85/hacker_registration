@@ -17,7 +17,13 @@
   <tbody>
     <% @hackers.each do |hacker| %>
       <tr>
-        <td><%= hacker.first_name %> <%= " - winner" if hacker.winner %></td>
+        <td>
+          <% if hacker.winner %>
+            <i class="fa fa-trophy"></i>
+          <% end %>
+
+          <%= hacker.first_name %>
+        </td>
         <td><%= hacker.last_name %></td>
       </tr>
     <% end %>
