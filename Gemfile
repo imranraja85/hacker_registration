@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'therubyracer', platforms: :ruby
 
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass-extras'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 
