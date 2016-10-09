@@ -16,6 +16,7 @@ gem "font-awesome-rails"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platform: :mri
