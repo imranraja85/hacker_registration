@@ -1,13 +1,31 @@
+require 'csv'
+
 class Hacker < ApplicationRecord
-  POSITIONS = {FULL_TIME: 'Full-time', PART_TIME: 'Part-time'}
+  POSITIONS = { FULL_TIME: 'Full-time', PART_TIME: 'Part-time' }.freeze
 
   validates :first_name, :last_name, :email, :github_id, :position, presence: true
 
-  def self.pick_winner(num = 1)
-    return if count < num
-    offset(rand(count - num)).limit(num).each do |hacker|
+  # Picks a random single winner that has not won before, returns nil if no
+  # winner is found.
+  def self.pick_winner
+    count.times do
+      hacker = offset(rand(count)).limit(1).first
+      next if hacker.winner
+
       hacker.winner = true
       hacker.save
+      return hacker
+    end
+
+    return
+  end
+
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << column_names
+      all.each do |hacker|
+        csv << hacker.attributes.values_at(*column_names)
+      end
     end
   end
 end
