@@ -15,7 +15,7 @@ RSpec.describe Hacker, type: :model do
   end
 
   describe 'raffle tests' do
-    let(:hackers) { 10.times {create(:hacker)} }
+    let(:hackers) { 4.times {create(:hacker)} }
 
     before { hackers }
 
@@ -34,6 +34,16 @@ RSpec.describe Hacker, type: :model do
     it 'selects 3 winners and sets the flag' do
       Hacker.pick_winner(3).each do |h|
         expect(h.winner).to eq(true)
+      end
+    end
+
+    it 'does not select a previous winner' do
+      winners = []
+      Hacker.all.each do |h|
+        if h.winner
+          expect(winners).to_not include(h.pick_winner.id)
+          winners << h.id
+        end
       end
     end
   end
