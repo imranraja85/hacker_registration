@@ -1,6 +1,6 @@
 # Hacker Registration
 
-Hacker Registration is a mobile friendly, easy to use, application to assists hackathon sponsors organize a raffle. The landing page is a form with only the minimal amount of fields needed to capture a hacker's profile.
+Hacker Registration is a mobile friendly and easy to use application to assist hackathon sponsors run a raffle. The landing page is a form with only the minimal amount of fields needed to capture a hacker's profile.
 
 ## Setup
 To create an admin, run the following rake task:

@@ -4,6 +4,6 @@ class HackerNotifierMailer < ApplicationMailer
   def send_winner_email(hacker)
     @hacker = hacker
     mail(to: @hacker.email,
-         subject: "Congratulations! You've the raffle. Come claim your prize!")
+         subject: "Congratulations! You've the won raffle. Come claim your prize!")
   end
 end
