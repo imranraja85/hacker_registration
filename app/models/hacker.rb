@@ -13,8 +13,10 @@ class Hacker < ApplicationRecord
       next if hacker.winner
 
       hacker.winner = true
-      hacker.save
-      return hacker
+      if hacker.save
+        HackerNotifierMailer.send_winner_email(hacker).deliver  
+        return hacker
+      end
     end
 
     return
