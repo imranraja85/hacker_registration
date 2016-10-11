@@ -14,7 +14,7 @@ class Hacker < ApplicationRecord
 
       hacker.winner = true
       if hacker.save
-        HackerNotifierMailer.send_winner_email(hacker).deliver  
+        HackerNotifierMailer.send_winner_email(hacker).deliver if ENV["ENABLE_MAILER"]
         return hacker
       end
     end
