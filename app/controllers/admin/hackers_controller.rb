@@ -9,8 +9,8 @@ class Admin::HackersController < Admin::AdminsController
   end
 
   def select_winner
-    Hacker.pick_winner
-    flash[:notice] = 'A raffle winner has been selected and notified!'
+    winner = Hacker.pick_winner
+    flash[:notice] = "#{winner.first_name} #{winner.last_name} has been selected as the raffle winner!"
     redirect_to admin_hackers_path
   end
 end
