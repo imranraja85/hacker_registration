@@ -27,6 +27,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'guard-rspec'
+  gem 'rubocop'
 end
 
 group :development do
