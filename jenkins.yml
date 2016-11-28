@@ -1,0 +1,13 @@
+version: "2"
+services:
+  postgres:
+    image: postgres:9.4
+  web:
+    build: .
+    image: hacker_registration_jenkins 
+    environment:
+      RAILS_ENV: test
+      RAILS_SERVE_STATIC_FILES: 'true'
+      SECRET_KEY_BASE: de7261ae75f8
+    depends_on:
+      - postgres
